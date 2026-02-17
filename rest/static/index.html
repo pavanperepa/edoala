@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Roast Arena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="bg-blur bg-blur-a"></div>
+  <div class="bg-blur bg-blur-b"></div>
+
+  <header class="topbar">
+    <h1>Code Roast Arena</h1>
+    <p>Hackerrank-style local playground with live sarcastic reactions.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel panel-problem">
+      <h2>Challenge</h2>
+      <label for="problem-select">Pick Problem</label>
+      <select id="problem-select"></select>
+      <div id="problem-meta" class="problem-meta"></div>
+      <pre id="problem-prompt" class="problem-prompt"></pre>
+      <button id="new-session-btn" class="btn-primary">Start New Session</button>
+    </section>
+
+    <section class="panel panel-editor">
+      <div class="editor-header">
+        <h2>Editor</h2>
+        <div class="editor-controls">
+          <label for="mode-select">Reaction Mode</label>
+          <select id="mode-select">
+            <option value="auto">Auto</option>
+            <option value="emoji">Emoji</option>
+            <option value="gif">GIF</option>
+          </select>
+          <button id="force-react-btn" class="btn-secondary">Force React</button>
+        </div>
+      </div>
+
+      <label for="model-input">Model</label>
+      <input id="model-input" type="text" value="gpt-4.1-mini" />
+
+      <label for="api-key-input">OpenAI API Key (local only)</label>
+      <input id="api-key-input" type="password" placeholder="sk-..." />
+
+      <label for="code-editor">Code</label>
+      <textarea id="code-editor" spellcheck="false"></textarea>
+      <p id="status" class="status">Loading...</p>
+    </section>
+
+    <section class="panel panel-reactions">
+      <h2>Live Reactions</h2>
+      <div id="reaction-feed" class="reaction-feed"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

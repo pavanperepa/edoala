@@ -1,0 +1,12 @@
+[project]
+name = "rest"
+version = "0.1.0"
+description = "Local prototype for live sarcastic code reactions"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.116.0",
+    "openai>=1.109.0",
+    "pydantic>=2.11.0",
+    "uvicorn>=0.35.0",
+]
